@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
             --color-gray-input-text: #ACB5BD;
             --color-gray-happy: #F3F2FF;
             --color-gray-900: #12101A;
+            
 
 
 
@@ -16,7 +17,13 @@ const GlobalStyle = createGlobalStyle`
 
             --color-purple-800: #7165E3;
             --color-light-purple: #7165E333;
+
+
+
             --color-black: #000000;
+
+
+            --color-red-700: #EB5757;
         }
 
 

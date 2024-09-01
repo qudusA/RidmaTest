@@ -7,6 +7,7 @@ type ButtonProps = {
   children: string;
   size: ButtonSize;
   variation: ButtonVariation;
+  type?: "submit";
 };
 
 const sizes = {
@@ -17,6 +18,8 @@ const sizes = {
   medium: css`
     padding: 10px 20px;
     font-size: 1rem;
+    border-radius: 10px;
+    width: 80%;
   `,
   large: css`
     width: 100%;
@@ -47,9 +50,14 @@ const ButtonComponent = styled.button<ButtonProps>`
   cursor: pointer;
 `;
 
-export default function Button({ children, size, variation }: ButtonProps) {
+export default function Button({
+  children,
+  size,
+  variation,
+  type,
+}: ButtonProps) {
   return (
-    <ButtonComponent size={size} variation={variation}>
+    <ButtonComponent size={size} variation={variation} type={type}>
       {children}
     </ButtonComponent>
   );

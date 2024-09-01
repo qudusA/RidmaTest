@@ -1,3 +1,5 @@
+import MainDashboard from "../features/dashboard/MainDashboard";
+
 export default function Dashboard() {
-  return <div>dashboard</div>;
+  return <MainDashboard />;
 }

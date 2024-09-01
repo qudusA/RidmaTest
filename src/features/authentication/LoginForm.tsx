@@ -1,8 +1,9 @@
 import styled, { css } from "styled-components";
 import Input from "../../ui/Input";
 import Button from "../../ui/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PasswordInputField from "../../ui/PasswordInputField";
+import { useState } from "react";
 
 type typeBold = "bold";
 
@@ -37,27 +38,44 @@ const StyledLink = styled(Link)`
   margin-left: ${(props) => props.to === "/signup" && "10px"};
 `;
 
-// const arr: {}[] =[
-//     {placeholder: "Username", type: "text", comment: ""}
-// ]
-
 export default function LoginForm() {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const navigate = useNavigate();
+
+  function getData(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    console.log("Email:", email);
+    console.log("Password:", password);
+    navigate("/", { replace: true });
+  }
+
   return (
-    <Form>
-      <Input placeholder="Email Address" type="text" />
+    <Form onSubmit={getData}>
+      <Input
+        placeholder="Email Address"
+        type="text"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
       <div style={{ textAlign: "justify" }}>
         <PasswordInputField>
-          <Input placeholder="Password" />
+          <Input
+            placeholder="Password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </PasswordInputField>
         <StyledLink to="/forgetpassword">forgot password?</StyledLink>
       </div>
 
-      <Button size="large" variation="secondary">
+      <Button size="large" variation="secondary" type="submit">
         Login
       </Button>
 
       <P bold="bold">
-        Don't have an account? <StyledLink to={"/signup"}>sign up</StyledLink>
+        Don't have an account? <StyledLink to="/signup">sign up</StyledLink>
       </P>
     </Form>
   );

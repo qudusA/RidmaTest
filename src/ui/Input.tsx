@@ -4,6 +4,8 @@ export type InputProp = {
   placeholder: string;
   type?: string;
   id?: string;
+  value?: string;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 };
 
 const InputField = styled.input`
@@ -12,8 +14,6 @@ const InputField = styled.input`
     width: 100%;
     padding: 1.73rem 2.5rem;
     border-radius: 10px;
-
-    /* flex: 1; */
   }
 
   &::-webkit-input-placeholder {
@@ -23,8 +23,20 @@ const InputField = styled.input`
   }
 `;
 
-export default function Input({ placeholder, type, id }: InputProp) {
+export default function Input({
+  placeholder,
+  type,
+  id,
+  value,
+  onChange,
+}: InputProp) {
   return (
-    <InputField placeholder={placeholder} type={type} id={id}></InputField>
+    <InputField
+      placeholder={placeholder}
+      type={type}
+      id={id}
+      value={value}
+      onChange={onChange}
+    />
   );
 }
