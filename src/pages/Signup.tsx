@@ -6,8 +6,10 @@ import SignupForm from "../features/authentication/SignupForm";
 const SignupAndLoginContainer = styled.section`
   & {
     display: flex;
-    height: 102.4rem;
-    max-width: 144rem;
+    height: 100vh;
+    max-width: 100vw;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -17,6 +19,7 @@ const LeftDiv = styled.div`
     height: 100%;
     width: 42.57%;
     display: grid;
+    justify-content: center;
     align-items: center;
   }
 `;
@@ -24,7 +27,7 @@ const LeftDiv = styled.div`
 const RightDiv = styled.div`
   & {
     background: var(--color-gray-happy);
-    height: 100%;
+    height: 100vh;
     width: 57.43%;
     display: grid;
     align-items: center;

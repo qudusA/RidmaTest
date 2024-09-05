@@ -7,8 +7,10 @@ import SignupAndLoginBanner from "../ui/SignupAndLoginBanner";
 const SignupAndLoginContainer = styled.section`
   & {
     display: flex;
-    height: 102.4rem;
-    max-width: 144rem;
+    height: 100vh;
+    max-width: 100vw;
+    justify-content: center;
+    align-items: center;
   }
 `;
 

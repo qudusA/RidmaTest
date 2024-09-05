@@ -5,14 +5,18 @@ import SideBar from "./SideBar";
 import styled from "styled-components";
 
 const Section = styled.section`
-  /* max-width: 144rem; */
+  width: 100vw;
   display: grid;
   grid-template-columns: 22.78% 77.22%;
   grid-template-rows: auto 1fr;
-  height: 115rem;
+  height: 100vh;
   background-color: var(--color-gray-50);
   /* background-color: red; */
   /* max-height: 115rem; */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export default function AppLayout() {

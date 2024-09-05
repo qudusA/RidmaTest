@@ -50,7 +50,7 @@ const Span = styled.span`
 
   & > input {
     width: 2.6rem;
-    height: 2.6rem;
+    /* height: 2.6rem; */
     cursor: pointer;
     background-color: red;
   }

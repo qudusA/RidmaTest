@@ -9,22 +9,25 @@ type PasswordInputFieldProps = {
 };
 
 const EyeSlash = styled(BsEyeSlash)`
-  position: absolute;
-  right: 20px;
-  top: 10px;
   cursor: pointer;
 `;
 
 const Eye = styled(BsEye)`
-  position: absolute;
-  right: 20px;
-  top: 10px;
   cursor: pointer;
 `;
 
 const Div = styled.div`
   position: relative;
   margin-bottom: 10px;
+
+  & > span {
+    position: absolute;
+    display: inline-block;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
 `;
 
 export default function PasswordInputField({
@@ -40,6 +43,7 @@ export default function PasswordInputField({
     <Div>
       {clone}
       <span role="button" onClick={() => setShowPassword((show) => !show)}>
+        {/* hi */}
         {showPassword ? <Eye /> : <EyeSlash />}
       </span>
     </Div>
