@@ -33,16 +33,16 @@ const Div1 = styled.div`
   & > p:first-child {
     border-radius: 3rem;
     color: var(--color-gray-0);
+    align-self: center;
     display: flex;
-    /* padding: 15px; */
     & > img {
       flex: 1;
     }
   }
 
   & > p:last-child {
-    display: flex;
-    /* flex: 1; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 15px;
     border-radius: 1.559rem;
     background-image: linear-gradient(
@@ -63,9 +63,6 @@ const Div1 = styled.div`
       );
       background-size: cover;
       background-position: center;
-      width: 94.62px;
-      /* min-height: 87.78px; */
-      display: inline-block;
       border-radius: 23.7px;
       display: flex;
       justify-content: center;
@@ -75,6 +72,8 @@ const Div1 = styled.div`
       color: var(--color-gray-900);
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      grid-column: span 2;
       & > span:first-child {
         font-weight: 700;
         font-size: 2.107rem;
